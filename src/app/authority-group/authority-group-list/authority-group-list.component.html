@@ -1,0 +1,29 @@
+<h1>Authority Groups</h1>
+
+<div class="row">
+  <div class="col-xs-12">
+    <a class="btn btn-success" [routerLink]="['create']">Create</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <table class="table table-striped">
+      <thead>
+        <th># Id</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Enabled</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let authorityGroup of authorityGroups, let i = index">
+          <td><a [routerLink]="[authorityGroup.id]">{{ authorityGroup.id }}</a></td>
+          <td>{{ authorityGroup.name }}</td>
+          <td>{{ authorityGroup.description }}</td>
+          <td>{{ authorityGroup.enabled }}</td>
+          <td><a href="#" (click)="onDelete(authorityGroup.id, i)"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></td>
+          <td><a [routerLink]="[authorityGroup.id]"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
